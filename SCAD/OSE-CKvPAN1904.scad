@@ -53,8 +53,8 @@ rotate([90,0,0])
 needle();
 
 //needle above PaN plate
-translate([0,0,-nB+(pPspace1+pPplate1+pMH+pPplate3-nC)])
-rotate([0,0,((360/(p2number*p2needles))*3)-((360/p2number/p2needles)*3.5)+((360/p4number))])
+translate([0,0,-nB+(pPspace1+pPplate1+pMH+pPplate3)])
+rotate([0,0,((360/(p2number*p2needles))*4)-((360/p2number/p2needles)*3.5)+((360/p4number))])
 translate([(-p3wallID/2)+(p2needlegrooveDepthslop/2),0,0])
 translate([0,nX/2,0])
 rotate([90,0,0])

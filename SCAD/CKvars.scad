@@ -368,6 +368,15 @@ pMH-(pMH-(aaboltHD/2)-5)
 pM3mink=6;
 pM3slop=0.25;
 
+//pS1 - pick a needle geared riser
+pS1W=(needle2needle-nX)/2;  //width
+pS1wallT=4; //Cross section to fit in guide groove
+pS1wallW=pS1W+8;
+pS1T=8; //thickness of vertical section without gears
+pS1GearD=10; //filler for now, TODO calculate
+pS1Z=pPplate1+pMH+pPplate3+pMgrooveD+pS1GearD;
+
+
 //c2 geared plate - clean up below, not used to generate gear
 c2H=bottom_surface_motor_gearsH;
 c2gap=0.6;  //gap between c2ID and p3wallOD  // 0.7?  0.5?  0.35? how low can you go?
