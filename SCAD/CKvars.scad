@@ -96,7 +96,7 @@ woodbeamScrewOD=UPwoodbeamScrewOD;   // 1/4" screw hole
 //plate 
 pPplate1=bottom_surface_motor_gearsH;  //thickness of geared plated
 pPplate2=upper_surfaceH;
-
+pPplate3=upper_surfaceH;
 
 /*
 //"connector0912" connects upper_surface plate to bottom_surface geared plate
@@ -342,7 +342,7 @@ echo("pushdown distance",pPspace2-(nC+pPextra));
 threadthickness=0.5;    //approx used to leave space above p2
 
 pMgrooveC3=pMgrooveC2+(pMgrooveD-nC)-(nG+threadthickness)+(p4baseH-p4basegapH)+p4rampH+p4clear+nF;       //top of groove at position 3 "top center" calc! //44.25
-pMwallHextra=5.75;      //extra height above groove at heighest point
+pMwallHextra=3.75;      //extra height above groove at heighest point
 pMH=pMwallHextra+pMgrooveC3; //total height of mountain
 pMshelfH=4; //thickness of shelf resting on top of c3 - depricated
 pMshelfchamfR=3; //radius of chamfer at join shelf/wall
@@ -392,7 +392,7 @@ centerlineD=p2ID+(p2W+(p3wiggle*2));
 
 
 p3grooveH1=pPspace1+pPplate1; //bottom of verticle groove in p3
-p3grooveH2=pPspace1+pPplate1+pMgrooveC3;  //top of groove in p3
+p3grooveH2=pPspace1+pPplate1+pMH+pPplate3+pMgrooveD;  //top of groove in p3
 
 p4baseOD=centerlineD+p4baseW;
 p4baseID=centerlineD-p4baseW;
@@ -427,6 +427,9 @@ c4paperclipholetoEdge=3;
 pMgrooveOR=pMgroove+(pMID/2); //center to OD of groove
     // is this supposed to be the radius? 
     /////////////////////////////////
+
+c5OD=pMgrooveOR*2;
+c5H=upper_surfaceH;
 
 ////////////////////////
 // MOUNTAIN VARIABLES //
