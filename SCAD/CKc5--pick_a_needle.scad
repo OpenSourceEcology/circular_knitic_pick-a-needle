@@ -18,15 +18,15 @@ translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]
                     //mountain cutout
     rotate([0,0,0]){
     difference(){
-    translate([-pMbodyXr,0,0])
-      cube([(pMbodyXr*2),((c2ID+(pMgroove*2)+(pMwallT*2))/2),c5H]);
+    translate([-(pMbodyXr-pMshelfchamfR),0,0])
+      cube([((pMbodyXr-pMshelfchamfR)*2),((c2ID+(pMgroove*2)+(pMwallT*2))/2),c5H]);
 
-        translate([-(pMbodyXr),((c2ID+(pMgroove*2)+(pMwallT*2))/2),0])
+        translate([-(pMbodyXr-pMshelfchamfR),((c2ID+(pMgroove*2)+(pMwallT*2))/2),0])
         rotate([0,0,45])
         cube([pMshelfBoltD,pMshelfBoltD,pMH], center=true);
         
         mirror([1,0,0])
-        translate([-(pMbodyXr),((c2ID+(pMgroove*2)+(pMwallT*2))/2),0])
+        translate([-(pMbodyXr-pMshelfchamfR),((c2ID+(pMgroove*2)+(pMwallT*2))/2),0])
         rotate([0,0,45])
         cube([pMshelfBoltD,pMshelfBoltD,pMH], center=true);
     } //end diff
