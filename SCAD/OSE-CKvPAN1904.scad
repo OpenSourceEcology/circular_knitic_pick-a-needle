@@ -16,6 +16,7 @@ use <CKc1--tabletop.scad>;
 use <CKc2--bottom_surface_motor_gears.scad>;
 use <CKc3--topplate.scad>;
 use <CKc5--pick_a_needle.scad>;
+use <CKc6-lowerplate.scad>;
 
 /*
 //needle
@@ -114,7 +115,7 @@ for(i=[1:p4number]){
 }
 
 
-
+/*
 //p7 Z
         for(i=[0:(p7number/2)-1]){
     rotate([0,0,45-((90/((p7number/2)-1))*i)]){
@@ -134,21 +135,21 @@ CKp7(1);
         }//end translate
     }//end rotate
 }//end for
-
+*/
 
 
 //////////////////
 //ROTATING SECTION
 
-rotate([0,0,360/c2connectors/2]){
+rotate([0,0,0]){
 
 //c2 - geared plate
 translate([0,c3OD/2,-c2H])
 CKc2();
 
 //c6 - mountain base
-//translate([0,c3OD/2,pPspace1])
-//CKc6();
+translate([0,c3OD/2,pPspace1])
+CKc6();
 
 //c3 - mountain insert
 translate([0,c3OD/2,pPspace1+pPspace2])

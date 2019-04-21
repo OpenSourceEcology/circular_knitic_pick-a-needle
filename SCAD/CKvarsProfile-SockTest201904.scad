@@ -50,7 +50,7 @@ UPpMp7X=2;  //half of length of top plateu of groove //3  //2
 UPthreadD=1.5;
 
 //number of stepper motors driving the geared plate
-UPc1steppersnumber=2;  
+UPc1steppersnumber=4;  
 
 //laser cut part thickness
 UPupper_surfaceH=3.4;  //thickness of upper rotating plate  ///5  //6.35= 1/4"inch
