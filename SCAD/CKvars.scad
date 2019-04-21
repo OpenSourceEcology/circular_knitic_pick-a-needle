@@ -47,6 +47,8 @@ c1zmounts=max(p3number,4);           //p3number  //4
 
 c1steppersnumber=UPc1steppersnumber;  //number of stepper motors driving the gear
 
+Td=5; //tooth depth-ish? - used to calculate # teeth large gear and pitch
+
 ////MATERIALS////
 
 //thread diameter
@@ -382,7 +384,7 @@ c2H=bottom_surface_motor_gearsH;
 c2gap=0.6;  //gap between c2ID and p3wallOD  // 0.7?  0.5?  0.35? how low can you go?
 c2t2t=6.858;
 c2width=50;  //depricated?
-c2OD=(c2width*2)+(c2gap*2)+p2OD+(p3wiggle*2)+(p3wallW*2);
+c2OD=p3baseOD+(p5boltL*2)+(Td*2)+(2*2);
 c2ID=(c2gap*2)+p2OD+(p3wiggle*2)+(p3wallW*2);   //should this be p3wallOD+(c2gap*2)
 c2teeth=((c2OD*PI)/c2t2t);
 c2dipitch=c2teeth/(c2OD*PI);
@@ -601,7 +603,7 @@ echo("pMID less pMbodyXr*2",pMID-(pMbodyXr*2)); //needs to be positive
 
 
 
-pMODshelf=c3OD;
+pMODshelf=c3OD; 
 
 pMarcL=((PI*c2ID)*((pMd1e-pMd0)*2)/360); //approx arc length of mountain - could get more accurate number
 
@@ -633,12 +635,12 @@ c2connectors=pMnum*3; // need to tweak so does not overlap mountain footprint
 
     /////gear calcs/////
 
+
 //solve for # of teeth and circ_pitch that gives proper tooth whole depth
-Td=5; //tooth depth-ish? - used to calculate # teeth large gear and pitch
 
-Tn=floor(((-2*c3OD)/((c3OD-Td)-c3OD))-2); //number of teeth? - for big gear
+Tn=floor(((-2*c2OD)/((c2OD-Td)-c2OD))-2); //number of teeth? - for big gear
 
-pCir=180*(c3OD-(Td))/Tn; //circular pitch - use for both big and small gear
+pCir=180*(c2OD-(Td))/Tn; //circular pitch - use for both big and small gear
 
     CKp1_circular_pitch=pCir;
     CKp1_number_of_teeth=spurgearTn;
@@ -650,9 +652,9 @@ pCir=180*(c3OD-(Td))/Tn; //circular pitch - use for both big and small gear
 	CKc2_pitch_diameter  =  CKc2_number_of_teeth * CKc2_circular_pitch / 180;
 	CKc2_pitch_radius = CKc2_pitch_diameter/2;
 
-echo("c3OD",c3OD);
+echo("c2OD",c2OD);
 echo("Tn",Tn);
-echo("pitch",180*(c3OD-(Td))/Tn);
+echo("pitch",180*(c2OD-(Td))/Tn);
 echo("pCir",pCir);
 
 

@@ -25,7 +25,7 @@ CKc2();
 
 module CKc2(){
     
-translate([0,-c3OD/2,0]){
+translate([0,-c2OD/2,0]){
 rotate([0,0,-((360/c2connectors))])
 difference(){
 gear (circular_pitch=pCir,

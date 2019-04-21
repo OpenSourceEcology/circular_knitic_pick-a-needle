@@ -76,7 +76,7 @@ CKc1();
 
 //p1 - motor gear
 rotate([0,0,0])
-translate([0,-(CKp1_pitch_radius+CKc2_pitch_radius),1])
+translate([0,-(CKp1_pitch_radius+CKc2_pitch_radius),1-c2H-pPspace1-c1H])
 CKp1();
 
 
@@ -144,7 +144,7 @@ CKp7(1);
 rotate([0,0,0]){
 
 //c2 - geared plate
-translate([0,c3OD/2,-c2H])
+translate([0,c2OD/2,-c2H])
 CKc2();
 
 //c6 - mountain base
@@ -159,9 +159,9 @@ CKc3();
 translate([0,c3OD/2,pPspace1+pPplate1+pMH])
 CKc5();    
 
-//p5 - small bearing holder
+//p5 - small bearing holder TODO
 for(i=[1:c2bmounts]){
-    rotate([0,0,((360/c2connectors)*1.5)+((360/c2bmounts)*i)]){
+    rotate([0,0,((360/c2bmounts)*i)]){
         translate([0,(p3baseOD/2)+1,pPspace1]){ 
             mirror([0,0,1])
 CKp5(1); //small bearing holder
@@ -169,13 +169,16 @@ CKp5(1); //small bearing holder
     }//end rotate
 }//end for
 
-    //small bearing holder - under mountain
-    rotate([0,0,0]){
-        translate([0,(p3baseOD/2)+1,pPspace1]){
-            mirror([0,0,1])
+for(i=[1:c2bmounts]){
+    rotate([0,0,((360/c2bmounts)*i)]){
+        translate([0,(p3baseOD/2)+1,-c2H-pPspace1]){ 
+            mirror([0,0,0])
 CKp5(1); //small bearing holder
         }//end translate
     }//end rotate
+}//end for
+
+
 
 //p8
 translate([0,0,pPspace1+pPplate1])
