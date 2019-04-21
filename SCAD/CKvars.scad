@@ -114,7 +114,7 @@ bearingholderSmallB2C=5.5;  //from base of bearing holder to center of bearing
 bearingholderSmallBOD=10;   //Outside Diameter of bearing
 bearingholderSmallBID=4.9;    //Inside Diameter of bore hole of bearing
 bearingholderSmallBW=4;     //Width of bearing
-bearingholderSmallgaproll=0.25; //extra space to leave below bearing for rolling
+bearingholderSmallgaproll=0.05; //extra space to leave below bearing for rolling
 bearingholderSmallgapclear=0.5; //extra space to leave above bearing inside holder
 
 

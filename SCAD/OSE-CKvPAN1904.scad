@@ -76,7 +76,7 @@ CKc1();
 
 //p1 - motor gear
 rotate([0,0,0])
-translate([0,-(CKp1_pitch_radius+CKc2_pitch_radius),1-c2H-pPspace1-c1H])
+translate([0,-(CKp1_pitch_radius+CKc2_pitch_radius),1-c2H-pPspace1])
 CKp1();
 
 
@@ -160,6 +160,16 @@ translate([0,c3OD/2,pPspace1+pPplate1+pMH])
 CKc5();    
 
 //p5 - small bearing holder TODO
+if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){    for(i=[1:4]){
+    rotate([0,0,((360/c2bmounts)*i)]){
+        translate([0,(p3baseOD/2)+1,pPspace1]){ 
+            mirror([0,0,1])
+CKp5(1); //small bearing holder
+        }//end translate
+    }//end rotate
+}//end for
+}
+else{
 for(i=[1:c2bmounts]){
     rotate([0,0,((360/c2bmounts)*i)]){
         translate([0,(p3baseOD/2)+1,pPspace1]){ 
@@ -168,7 +178,21 @@ CKp5(1); //small bearing holder
         }//end translate
     }//end rotate
 }//end for
+}
 
+if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){   
+for(i=[1:4]){
+    rotate([0,0,((360/c2bmounts)*i)]){
+        translate([0,(p3baseOD/2)+1,-c2H-pPspace1]){ 
+            mirror([0,0,0])
+CKp5(1); //small bearing holder
+        }//end translate
+    }//end rotate
+}//end for
+}
+else
+{    
+    
 for(i=[1:c2bmounts]){
     rotate([0,0,((360/c2bmounts)*i)]){
         translate([0,(p3baseOD/2)+1,-c2H-pPspace1]){ 
@@ -177,7 +201,7 @@ CKp5(1); //small bearing holder
         }//end translate
     }//end rotate
 }//end for
-
+}
 
 
 //p8
