@@ -17,6 +17,7 @@ use <CKc2--bottom_surface_motor_gears.scad>;
 use <CKc3--topplate.scad>;
 use <CKc5--pick_a_needle.scad>;
 
+/*
 //needle
 rotate([0,0,0]){  //-(360/p2number*p2needles)/2
 
@@ -61,12 +62,13 @@ rotate([90,0,0])
 needle();
 
 
-}
+} //end needle rotate
+*/
 
 
 
-//c1
-translate([0,0,-c1H])
+//c1 - table top
+translate([0,0,-c2H-pPspace1-c1H])
 CKc1();
 
 
@@ -140,12 +142,16 @@ CKp7(1);
 
 rotate([0,0,360/c2connectors/2]){
 
-//c2
-translate([0,c3OD/2,pPspace1])
+//c2 - geared plate
+translate([0,c3OD/2,-c2H])
 CKc2();
 
-//c3
-translate([0,c3OD/2,pPspace1+pPplate1+pPspace2])
+//c6 - mountain base
+//translate([0,c3OD/2,pPspace1])
+//CKc6();
+
+//c3 - mountain insert
+translate([0,c3OD/2,pPspace1+pPspace2])
 CKc3();
 
 //c5 - pick-a-needle off plate
@@ -190,12 +196,15 @@ CKpM(0,1,1);
 
 
 //((360/(p2number*p2needles))*3)-((360/p2number/p2needles)*3.5)+((360/p4number))
+
+/*
 translate([0,0,-nB+(pPspace1+pPplate1+pMgrooveC3-nC-(pMgrooveD-nC))])
 rotate([0,0,-90])
 translate([(-p3wallID/2)+(p2needlegrooveDepthslop/2),0,0])
 translate([0,nX/2,0])
 rotate([90,0,0])
 needle();
+*/
 
     } //end rotate
     //END ROTATING SECTION

@@ -34,7 +34,15 @@ gear (circular_pitch=pCir,
 	hub_thickness = c2H,
 	circles=0);
 
-cylinder(h=c2H+2,d=c3ID);  // donut hole
+        //p3 - "outer" holes
+        for(i=[1:p3baseholenumber*p3number]){
+            rotate([0,0,(((360/p3number/p3baseholenumber))/2)-((360/p3number/p3baseholenumber)*i)]){
+            translate([-(p3baseOD/2)+p3baseholefromODID,0,0])
+                cylinder(h=c1H+2,d=p3baseholeD,$fn=18);
+            }   //end rotate
+        }    //end outer hole set for   
+
+cylinder(h=c2H+2,d=p3baseID);  // donut hole TODO change ID number
 
 //calculate number of holes to skip in for() using arc of mountain?
 
