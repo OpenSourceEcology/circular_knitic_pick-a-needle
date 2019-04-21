@@ -1,7 +1,7 @@
 include <CKvars.scad>;
 
 //rotate([0,90,0])
-CKpS1(0);
+CKpS1();
 
 //TODO
 //add gear rack

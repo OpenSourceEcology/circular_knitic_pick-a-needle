@@ -11,6 +11,7 @@ use <CKp7--Zbearingholder.scad>;
 use <CKp8--plateconnector.scad>;
 use <CKp9--outerconnector.scad>;
 use <CKpM1--mountain.scad>;
+use <CKpS1--gearedRiser.scad>;
 
 use <CKc1--tabletop.scad>;
 use <CKc2--bottom_surface_motor_gears.scad>;
@@ -136,6 +137,16 @@ CKp7(1);
     }//end rotate
 }//end for
 */
+
+
+//pS1 - pick a needle
+translate([pMID,0,0])
+CKpS1();
+
+mirror([1,0,0])
+translate([pMID,0,0])
+CKpS1();
+
 
 
 //////////////////
