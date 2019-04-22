@@ -9,6 +9,7 @@ use <CKp4--yardHolder.scad>;
 use <CKp5--smallbearingholder.scad>;
 use <CKp7--Zbearingholder.scad>;
 use <CKp8--plateconnector.scad>;
+use <CKp8d--plateconnector-bottomStand.scad>;
 use <CKp9--outerconnector.scad>;
 use <CKpM1--mountain.scad>;
 use <CKpS1--gearedRiser.scad>;
@@ -116,38 +117,24 @@ for(i=[1:p4number]){
 }
 
 
-/*
-//p7 Z
-        for(i=[0:(p7number/2)-1]){
-    rotate([0,0,45-((90/((p7number/2)-1))*i)]){
-        translate([0,(c3OD/2)-p7bearingfromfront-(p7wiggleL/2)-bearingholderZBW,0]){  //close enough?
-//trans Y old : (c3OD/2)-((p7mountL-p7wallW)/2)-((bearingholderZBW+p7wiggleL)/2)-(p7wiggleL/2)
-CKp7(1);
-        }//end translate
-    }//end rotate
-}//end for
-
-mirror([0,1,0])
-        for(i=[0:(p7number/2)-1]){
-    rotate([0,0,45-((90/((p7number/2)-1))*i)]){
-        translate([0,(c3OD/2)-p7bearingfromfront-(p7wiggleL/2)-bearingholderZBW,0]){  //close enough?
-//trans Y old : (c3OD/2)-((p7mountL-p7wallW)/2)-((bearingholderZBW+p7wiggleL)/2)-(p7wiggleL/2)
-CKp7(1);
-        }//end translate
-    }//end rotate
-}//end for
-*/
 
 
 //pS1 - pick a needle
-translate([pMID,0,0])
+rotate([0,0,-45])
+translate([pMID/2,0,0])
 CKpS1();
 
 mirror([1,0,0])
-translate([pMID,0,0])
+translate([pMID/2,0,0])
 CKpS1();
 
 
+//p8d - outer plate connector
+for(i=[1:4]){
+rotate([0,0,45+(90*i)])
+translate([0,0,-c2H-pPspace1])
+CKp8d(); 
+}
 
 //////////////////
 //ROTATING SECTION

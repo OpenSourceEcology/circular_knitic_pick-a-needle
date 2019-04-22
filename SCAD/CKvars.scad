@@ -326,6 +326,7 @@ p8baseW=8;
 p8holeD=p8boltD;
 p8H=pPspace2;
 
+
 echo("suggested boltL for spacer", ceil((upper_surfaceH+pPspace2+bottom_surface_motor_gearsH+p8nutH)/5)*5   );  //20,22,25,30 commonly availabble
 
 //p9 outer connector
@@ -384,7 +385,7 @@ c2H=bottom_surface_motor_gearsH;
 c2gap=0.6;  //gap between c2ID and p3wallOD  // 0.7?  0.5?  0.35? how low can you go?
 c2t2t=6.858;
 c2width=50;  //depricated?
-c2OD=p3baseOD+(p5boltL*2)+(Td*2)+(2*2);
+c2OD=p3baseOD+(p5boltL*2)+(p5boltHeadH*2)+(Td*2)+(2*2);
 c2ID=(c2gap*2)+p2OD+(p3wiggle*2)+(p3wallW*2);   //should this be p3wallOD+(c2gap*2)
 c2teeth=((c2OD*PI)/c2t2t);
 c2dipitch=c2teeth/(c2OD*PI);
@@ -682,6 +683,17 @@ p8holeC2C=p8outerboltO2C-p8innerboltO2C;  //p8baseL-(p8holeend2C*2)
 
 p8baseL=p8holeC2C+(p8holeend2C*2); //25
 
+p8dID=c2OD+3;
+p8dOD=c3OD;
+p8dH=pPspace1+pPplate2+pPspace1;
+p8dD=15; //degrees around circle for each p8d
+p8dboltD=3;
+p8dsqNutW=5.5;
+p8dsqNutH=1.8;
+p8dsqNutSlop=0.25;
+
+p8eNutH=5;
+p8eboltD=3;
 
 //c1
 c1H=table_surface;
