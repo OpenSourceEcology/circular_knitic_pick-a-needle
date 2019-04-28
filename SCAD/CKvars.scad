@@ -237,7 +237,8 @@ p4holeH=p4basegapH/2;
 p4rampW=max(min(p4clawW-3,4),2.5);
 p4rampMinkD=(p4rampW/3)*2;  //minkoski diameter 
 p4rampWm=p4rampW-p4rampMinkD;
-p4clear=-0.5;  //distance above top of p4 from flipper in down position //need to fix -0.5?
+p4clear=-0.5;  //distance above top of p4 from flipper in down position //need to fix -0.5?  //-p4rampH*(1/3) or -5?
+//p4clear maybe need to calculate sin(45) distnace from top of baseH, distance from OD of needle to ID of base
 p4endtrim=0.5;
 p4clawWslanttop=1;   //0 = slant to rampW, p4rampW = no slant
 
@@ -382,7 +383,7 @@ pS1Z=pPplate1+pMH+pPplate3+pMgrooveD+pS1GearD;
 
 //c2 geared plate - clean up below, not used to generate gear
 c2H=bottom_surface_motor_gearsH;
-c2gap=0.6;  //gap between c2ID and p3wallOD  // 0.7?  0.5?  0.35? how low can you go?
+c2gap=0.5;  //gap between c2ID and p3wallOD  // 0.7?  0.5?  0.35? how low can you go?
 c2t2t=6.858;
 c2width=50;  //depricated?
 c2OD=p3baseOD+(p5boltL*2)+(p5boltHeadH*2)+(Td*2)+(2*2);

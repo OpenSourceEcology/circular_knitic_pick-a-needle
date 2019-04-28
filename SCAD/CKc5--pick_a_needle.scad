@@ -1,7 +1,15 @@
 include <CKvars.scad>;
 
-projection(cut = false)
+//projection(cut = false)
 CKc5();
+
+translate([(pMID/2)+pMgroove,-c3OD/2,c5H+1])
+translate([0,-33-(pS1W/2)-5,0])
+cube([42,33,42]);
+
+c5stepperL=33;
+c5stepperX=42;
+c5gearoffset=5; //distance from stepper face to begining of gear
 
 module CKc5(){
     
@@ -15,7 +23,7 @@ translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]
         union(){
             cylinder(h=c5H,d=c5OD);
             
-                    //mountain cutout
+                    //mountain
     rotate([0,0,0]){
     difference(){
     translate([-(pMbodyXr-pMshelfchamfR),0,0])
@@ -32,12 +40,39 @@ translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]
     } //end diff
 } //end rotate
         //////
+
+translate([0,-(c5stepperX+c5gearoffset+((pS1W+c2gap)/2))*2/2,0])
+        cube([c5stepperX+(pMID/2)+pMgroove,(c5stepperX+c5gearoffset+((pS1W+c2gap)/2))*2,c5H]);
+
+mirror([1,0,0])
+translate([0,-(c5stepperX+c5gearoffset+((pS1W+c2gap)/2))*2/2,0])
+        cube([c5stepperX+(pMID/2)+pMgroove,(c5stepperX+c5gearoffset+((pS1W+c2gap)/2))*2,c5H]);
         } //end main union
+        
+        
         
         cylinder(h=c5H+2,d=c3ID);  // donut hole
  
-        //plate connector holes
+
+//pick-a-needle
+rotate([0,0,0])
+translate([0,-(pS1W+c2gap)/2,0])        
+#cube([(pMID/2)+pMgroove+pS1T+(c2gap/2)+6,pS1W+c2gap,c5H+2]);        
+
+translate([(pMID/2)+pMgroove-(c2gap/2),pS1W-(pS1W/2)+(c2gap/2),0])
+#cube([pS1wallT+c2gap,pS1wallW+c2gap,c5H+2]);
+
+mirror([1,0,0]){
+rotate([0,0,0])
+translate([0,-(pS1W+c2gap)/2,0])        
+#cube([(pMID/2)+pMgroove+pS1T+(c2gap/2)+6,pS1W+c2gap,c5H+2]);        
+
+translate([(pMID/2)+pMgroove-(c2gap/2),pS1W-(pS1W/2)+(c2gap/2),0])
+#cube([pS1wallT+c2gap,pS1wallW+c2gap,c5H+2]);
+}
         
+        //plate connector holes
+/*        
         if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){
             
         for(i=[1:2]){
@@ -109,6 +144,7 @@ mirror([1,0,0])
     translate([(TFW/2)-(10/2),((c2ID+(pMgroove*2)+(pMwallT*2))/2)+(10/2),0])
         cylinder(d=3, h=pMH, $fn=36);
     }
+        */
         
     }  //end main difference
 
