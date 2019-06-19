@@ -11,7 +11,7 @@
 include <CKvarsNeedle-KH260.scad>;
 
 //select the settings profile file
-include <CKvarsProfile-SockTest201904.scad>;
+include <CKvarsProfile_36in_201906.scad>;
 
 //////////////////////////////////////
 
@@ -37,6 +37,9 @@ p4number=UPp4number;        //4                 //18  ///4    //4        //2
 
 //distance from the inside face of one needle to the next
 needle2needle=UPneedle2needle; //default=14.35615             //13.5334  //9.25
+
+//number of mountains aka number of thread spools being used at a time
+numberMountain=UPnumberMountain;
 
 //calculated diameter from inside edge of needles
 p2needlegrooveID=((needle2needle*p2number*p2needles)/PI);

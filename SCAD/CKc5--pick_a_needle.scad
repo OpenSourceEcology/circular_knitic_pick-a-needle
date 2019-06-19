@@ -22,7 +22,9 @@ translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]
         
         union(){
             cylinder(h=c5H,d=c5OD);
-            
+
+for(i=[1:numberMountain]){
+    rotate([0,0,i*(360/numberMountain)]){            
                     //mountain
     rotate([0,0,0]){
     difference(){
@@ -39,6 +41,9 @@ translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]
         cube([pMshelfBoltD,pMshelfBoltD,pMH], center=true);
     } //end diff
 } //end rotate
+} //end mountian for rotate
+} //end mountain for
+
         //////
 
 translate([0,-(c5stepperX+c5gearoffset+((pS1W+c2gap)/2))*2/2,0])

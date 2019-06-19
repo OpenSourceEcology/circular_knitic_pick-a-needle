@@ -98,6 +98,8 @@ for(i=[1:3]){
 } //end if    
         
         //mountain cutout
+for(i=[1:numberMountain]){
+    rotate([0,0,i*(360/numberMountain)]){
     rotate([0,0,0]){
     translate([-pMbodyXr,0,0])
       cube([(pMbodyXr*2),((c2ID+(pMgroove*2)+(pMwallT*2))/2),c3H]);
@@ -151,6 +153,8 @@ mirror([1,0,0])
     translate([(TFW/2)-(10/2),((c2ID+(pMgroove*2)+(pMwallT*2))/2)+(10/2),0])
         cylinder(d=3, h=pMH, $fn=36);
     }
+}//end mountina for rotate    
+}//end mountain for
         
     }  //end main difference
 
