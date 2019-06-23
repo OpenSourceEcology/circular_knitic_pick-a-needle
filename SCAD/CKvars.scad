@@ -400,6 +400,9 @@ c2dipitch=c2teeth/(c2OD*PI);
 
 cWiggle=0.1; //extra height on mountaint cutout for c3 to sit in  ?? is this used ??
 
+
+
+
 /////////////////////
 //calculated settings
 /////////////////////
@@ -691,17 +694,20 @@ p8holeC2C=p8outerboltO2C-p8innerboltO2C;  //p8baseL-(p8holeend2C*2)
 
 p8baseL=p8holeC2C+(p8holeend2C*2); //25
 
+p8dsqNutW=5.5;
 p8dID=c2OD+3;
-p8dOD=c3OD;
+
 p8dH=pPspace1+pPplate2+pPspace1;
 p8dD=15; //degrees around circle for each p8d
 p8dboltD=3;
-p8dsqNutW=5.5;
 p8dsqNutH=1.8;
 p8dsqNutSlop=0.25;
 
 p8eNutH=5;
 p8eboltD=3;
+
+//p8d
+p8dminT=p8dsqNutW+1;
 
 //c1
 c1H=table_surface;
@@ -723,6 +729,12 @@ echo("floor",
 echo("c3OD",c3OD);
 
 echo("c1W",c1W);
+
+
+
+
+c6OD=c3OD+(p8dminT*2);
+p8dOD=c6OD;
 
 //p2 flat socket head screw
 p2p3flatORmax=((c2ID+sqrt((-4*(p2p3flatHD/2)*(p2p3flatHD/2))+((c2ID)*(c2ID))))/2)/2; //maximum radius to be within c2ID

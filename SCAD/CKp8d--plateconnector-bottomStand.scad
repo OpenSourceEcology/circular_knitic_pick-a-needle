@@ -1,6 +1,7 @@
 include <CKvars.scad>;
 
-CKp8d(); //small bearing holder
+//translate(0,p8dOD/2,0)
+CKp8d(); //bottom stand
 
 module CKp8d(){
 

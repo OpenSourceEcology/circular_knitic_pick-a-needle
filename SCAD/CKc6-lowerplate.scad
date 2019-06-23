@@ -29,11 +29,11 @@ module CKc6(){
     rez=p2number*p2needles*2*2;  //calculate desired rezolution
     $fn=rez; //defines resolution of circles.
     
-translate([0,-c3OD/2,0]){     //[c3OD/2,0,0]       
+translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]       
     difference(){  
         
         union(){
-            cylinder(h=c3H,d=c3OD);
+            cylinder(h=c3H,d=c6OD);
         } //end main union
         
         cylinder(h=c3H+2,d=c3ID);  // donut hole
