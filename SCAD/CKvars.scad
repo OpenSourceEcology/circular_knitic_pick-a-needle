@@ -178,11 +178,15 @@ p2p3flatHH=1.86;
 p2p3nutH=4;
 p2p3nutOD=6.01;
 
-p2p4flatD=3;
-p2p4flatHA=90;
+p2p4type=0;  //0 for regular, 1 for flat
+p2p4flatD=2;
+p2p4boltD=2;
+p2p4flatHA=90; //angle between head's slopes
 p2p4flatHD=6.72;  //listed as 6.72 max 5.54 min
+p2p4boltHD=4.16;  //head Diameter
 p2p4flatHH=1.86;
-p2p4nutH=4;
+p2p4boltHH=2;  //head height
+p2p4nutH=1.6;
 
 echo("p2 lower bolt L",p2W+p3upperwallW+0); //fix
 echo("p2ID", p2ID);
