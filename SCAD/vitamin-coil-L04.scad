@@ -1,6 +1,6 @@
-PCL90();
+PCL04();
 
-module PCL90(){
+module PCL04(){
     
 x=36.576;
 y=41.402;
@@ -19,6 +19,7 @@ botz=topz-12.7;
 
 D=12.7;
 
+translate([-x/2,-y/2,-topz-top2stroke0])
 difference(){
     union(){
 cube([x,y,z]);

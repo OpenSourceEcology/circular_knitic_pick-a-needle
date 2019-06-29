@@ -129,9 +129,10 @@ translate([pMID/2,0,0])
 CKpS1();
 
 
+
 //p8d - outer plate connector
-for(i=[1:4]){
-rotate([0,0,45+(90*i)])
+for(i=[1:max(4,c1steppersnumber)]){
+rotate([0,0,((360/(max(4,c1steppersnumber)))/2)+((360/(max(4,c1steppersnumber)))*i)])
 translate([0,0,-c2H-pPspace1])
 CKp8d(); 
 }

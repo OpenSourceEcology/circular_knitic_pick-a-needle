@@ -117,44 +117,6 @@ for(i=[1:c2bmounts]){
 
 
 
-        //Z bearing mount holes
-        for(i=[0:(p7number/2)-1]){
-    rotate([0,0,45-((90/((p7number/2)-1))*i)]){
-        translate([0,(c3OD/2)-p7bearingfromfront-(p7wiggleL/2)-bearingholderZBW,0]){  
-                translate([-p7baseW/2,0,0]){
-                // hole 1
-            translate([p7mounthole2edge,p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);        
-        // hole 2
-            translate([p7baseW-p7mounthole2edge,p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);
-        // hole 3
-            translate([p7baseW/2,p7baseL-p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);        
-                }//end translate
-                }//end translate
-    }//end rotate
-}//end for
-
-mirror([0,1,0])
-        for(i=[0:(p7number/2)-1]){
-    rotate([0,0,45-((90/((p7number/2)-1))*i)]){
-        translate([0,(c3OD/2)-p7bearingfromfront-(p7wiggleL/2)-bearingholderZBW,0]){  //close enough?
-                translate([-p7baseW/2,0,0]){
-                // hole 1
-            translate([p7mounthole2edge,p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);        
-        // hole 2
-            translate([p7baseW-p7mounthole2edge,p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);
-        // hole 3
-            translate([p7baseW/2,p7baseL-p7mounthole2edge,0])
-            cylinder(d=p7mountholeOD,h=c1H+0.1,$fn=36);        
-                }//end translate
-                }//end translate
-    }//end rotate
-}//end for
-
 
         //Stepper Mount
 for(i=[1:c1steppersnumber]){
