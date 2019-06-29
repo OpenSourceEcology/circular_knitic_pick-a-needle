@@ -1,11 +1,27 @@
 include <CKvars.scad>;
+use <vitamin-coil-L04.scad>;
+use <CKpS1--gearedRiser.scad>;
+
+translate([36.576*1.5,0,pS1Z/2])
+PCL04();
+
+translate([36.576*3.5,0,pS1Z/2])
+PCL04();
+
+
+translate([0,0,-c5H])
+CKpS1();
+
 
 //projection(cut = false)
+translate([-c3ID/2,c3OD/2,-c5H])
 CKc5();
 
+/*
 translate([(pMID/2)+pMgroove,-c3OD/2,c5H+1])
 translate([0,-33-(pS1W/2)-5,0])
 cube([42,33,42]);
+*/
 
 c5stepperL=33;
 c5stepperX=42;

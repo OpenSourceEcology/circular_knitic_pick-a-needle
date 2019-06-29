@@ -54,6 +54,14 @@ cylinder(d=holeOD,h=y);
 
 
 }//end main diff    
-    
+
+translate([0,D/2,-top2stroke0+top2stroke1])
+rotate([90,0,0])     
+#cylinder(d=plungerholeD,h=D);    
+
+translate([0,D/2,(-top2stroke0+top2stroke1)/2])
+rotate([90,0,0])     
+#cylinder(d=plungerholeD,h=D);    
+
     
 }//end module
