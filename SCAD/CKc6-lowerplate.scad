@@ -68,7 +68,7 @@ translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]
             } //end rotate i
         } //end for
     }//end else
-
+/*
 //small bearing holder holes to optionally connect through
     if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){
     
@@ -96,9 +96,21 @@ for(i=[1:4]){
     }//end for rotate
 }//end small bearing holder for       
 } //end if    
-        
+*/        
     
-       
+for(i=[1:max(4,c1steppersnumber)]){
+    rotate([0,0,((360/(max(4,c1steppersnumber)))/2)+((360/(max(4,c1steppersnumber)))*i)]){
+        
+rotate([0,0,(p8dD-2)/2])
+translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
+cylinder(d=p8dboltD,h=c1H, $fn=36);
+
+mirror([1,0,0])
+rotate([0,0,(p8dD-2)/2])
+translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
+cylinder(d=p8dboltD,h=c1H, $fn=36);
+    }
+}       
        
         
     }  //end main difference

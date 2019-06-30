@@ -115,7 +115,20 @@ for(i=[1:c2bmounts]){
     
     //base mounting holes
 
+//spacer mounts
+for(i=[1:max(4,c1steppersnumber)]){
+    rotate([0,0,((360/(max(4,c1steppersnumber)))/2)+((360/(max(4,c1steppersnumber)))*i)]){
+        
+rotate([0,0,(p8dD-2)/2])
+translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
+cylinder(d=p8dboltD,h=c1H, $fn=36);
 
+mirror([1,0,0])
+rotate([0,0,(p8dD-2)/2])
+translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
+cylinder(d=p8dboltD,h=c1H, $fn=36);
+    }
+}
 
 
         //Stepper Mount
