@@ -2,10 +2,10 @@ include <CKvars.scad>;
 use <vitamin-coil-L04.scad>;
 use <CKpS1--gearedRiser.scad>;
 
-translate([36.576*1.5,0,pS1Z/2])
+translate([36.576*1.5,0,0])
 PCL04();
 
-translate([36.576*3.5,0,pS1Z/2])
+translate([36.576*3.5,0,0])
 PCL04();
 
 

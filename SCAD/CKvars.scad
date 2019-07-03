@@ -379,6 +379,10 @@ pMH-(pMH-(aaboltHD/2)-5)
 pM3mink=6;
 pM3slop=0.25;
 
+pMsqNutW=5.5;
+pMsqNutH=1.8;
+pMsqNutSlop=0.25;
+
 //pS1 - pick a needle geared riser
 pS1W=(needle2needle-nX)/2;  //width
 pS1wallT=4; //Cross section to fit in guide groove
@@ -435,6 +439,8 @@ p2holeH=p3grooveH2+((p3wallH-p3grooveH2)/2);  //hight from table top
 c3ID=c2ID;
 c3H=upper_surfaceH;
 
+//c6
+c6H=c3H;
 
 pMID=c2ID;
 pMODwall=c2ID+(pMgroove*2)+(pMwallT*2);
@@ -630,7 +636,7 @@ pMnum=floor(pMmaxNum/2);
 echo("pMnum",pMnum);
 
 //number of sets of bearings mounted to geared plated
-c2bmounts=max(3,pMnum);   //p3number  //probably should be higher
+c2bmounts=max(3,pMnum*2);   //p3number  //probably should be higher
 
 echo("c2bmounts",c2bmounts);
 
@@ -720,6 +726,7 @@ c1OD*(-ceil(1/(floor( (2-c1steppersnumber)*(c1steppersnumber/(2/c1steppersnumber
 c3OD
 );
 
+
 test=1;
 
 echo("floor",
@@ -735,6 +742,9 @@ echo("c1W",c1W);
 
 c6OD=c3OD+(p8dminT*2);
 p8dOD=c6OD;
+
+UPc1W=c6OD;
+
 
 //p2 flat socket head screw
 p2p3flatORmax=((c2ID+sqrt((-4*(p2p3flatHD/2)*(p2p3flatHD/2))+((c2ID)*(c2ID))))/2)/2; //maximum radius to be within c2ID

@@ -7,7 +7,6 @@ use <CKp2--inner.scad>;
 use <CKp3--outer.scad>;
 use <CKp4--yardHolder.scad>;
 use <CKp5--smallbearingholder.scad>;
-use <CKp7--Zbearingholder.scad>;
 use <CKp8--plateconnector.scad>;
 use <CKp8d--plateconnector-bottomStand.scad>;
 use <CKp9--outerconnector.scad>;
@@ -113,7 +112,7 @@ translate([0,c6OD/2,pPspace1])
 CKc6();
 
 //c3 - mountain insert
-translate([0,c3OD/2,pPspace1+pPspace2])
+translate([0,c3OD/2,pPspace1+c6H+pPspace2])
 CKc3();
 
 //c5 - pick-a-needle off plate

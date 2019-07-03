@@ -147,7 +147,7 @@ translate([0,c2OD/2,-c2H])
 CKc2();
 
 //c6 - mountain base
-translate([0,c3OD/2,pPspace1])
+translate([0,c6OD/2,pPspace1])
 CKc6();
 
 //c3 - mountain insert

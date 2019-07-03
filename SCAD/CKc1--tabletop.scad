@@ -8,9 +8,12 @@ use <CKp1--motor_gear.scad>;
 //need to reduce to 380 OD width side to side
 //need to reduce wasted space around the edges
 
+c1Sides=6;
+
+c1polyOD=c6OD;  //need to calculate stepper OD later
 
 projection(cut = false)
-translate([c1W/2,0,0])
+translate([c1polyOD/2,0,0])
 CKc1();
 
 
@@ -30,29 +33,29 @@ echo("c2c of gears",CKp1_pitch_radius+CKc2_pitch_radius);
 translate([0,0,0]){            
     difference(){  
 
-translate([-c1W/2,-c1OD/2,0])
-cube([c1W,c1OD,c1H]);
+//translate([-c1W/2,-c1OD/2,0])
+//cube([c1W,c1OD,c1H]);
 
-/*        
+        
 //        union(){
 //octogon
       difference(){
-              translate([-c1zOD/2,-c1zOD/2,0])
-    cube([c1zOD,c1zOD,c1H]);  //use C1OD stepper side, use new number for Z side
-          for(i=[2:8]){
-              rotate([0,0,(45*i)+90])
-              translate([c1zOD/2,-c1zOD/2,0])
-              #cube([c1zOD,c1zOD,c1H]);
+              translate([0,0,c1H/2])
+    cube([c1polyOD*1.5,c1polyOD*1.5,c1H],center=true);  //use C1OD stepper side, use new number for Z side
+          for(i=[1:c1Sides]){
+              rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
+              translate([c1polyOD/2,-c1polyOD/2,0])
+              #cube([c1polyOD,c1polyOD,c1H]);
           }
           
-                    for(i=[1]){
-              rotate([0,0,(45*i)+90])
-              translate([c1OD/2,-c1OD/2,0])
-              #cube([c1OD,c1OD,c1H]);
-          }
+//                    for(i=[1]){
+//              rotate([0,0,(45*i)+90])
+//              translate([c1OD/2,-c1OD/2,0])
+//              #cube([c1OD,c1OD,c1H]);
+//          }
     
       } //end diff      
-  */          
+          
             
             
         
@@ -89,7 +92,7 @@ for(i=[1:4]){
 }else
 {
 for(i=[1:c2bmounts]){
-    rotate([0,0,-((360/c2connectors)/2)+((360/c2bmounts)*i)]){
+    rotate([0,0,((360/c2bmounts)*i)]){
         translate([0,((p3baseOD/2)+1),0]){ 
             
     //smallbearingholder holes

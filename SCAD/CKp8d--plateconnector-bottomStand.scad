@@ -1,6 +1,6 @@
 include <CKvars.scad>;
 
-//translate(0,p8dOD/2,0)
+translate([0,-p8dOD/2,0])
 CKp8d(); //bottom stand
 
 module CKp8d(){
@@ -17,8 +17,8 @@ translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
 cylinder(d=((p8dOD-p8dID)/2),h=pPspace1+pPplate2+pPspace1);    
     
     difference(){
-cylinder(d=p8dOD,h=p8dH, $fn=90);
-cylinder(d=p8dID,h=p8dH, $fn=90);
+cylinder(d=p8dOD,h=p8dH, $fn=180);
+cylinder(d=p8dID,h=p8dH, $fn=180);
 
 rotate([0,0,-p8dD/2]) 
 translate([0,-p8dOD,0])       

@@ -23,6 +23,8 @@ CKpM(0,0,0);
 
 echo((c3OD-c3ID)/2);
 
+echo("c6OD",c6OD);
+
 module CKc6(){
     
     
@@ -57,7 +59,7 @@ translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]
         } //end for
     }else
     {
-                for(i=[1:c2connectors-1]){
+                for(i=[1:c2connectors]){
             rotate([0,0,((360/c2connectors)*i)]){
           
                         translate([0,p8innerboltO2C,-0.1])
@@ -110,7 +112,64 @@ rotate([0,0,(p8dD-2)/2])
 translate([0,(p8dID/2)+(((p8dOD-p8dID)/2)/2),0])
 cylinder(d=p8dboltD,h=c1H, $fn=36);
     }
-}       
+} //end supports
+
+
+//bearing holders
+//small bearing holder
+if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){
+    
+for(i=[1:4]){
+    rotate([0,0,(90*i)]){
+        translate([0,((p3baseOD/2)+1),0]){ 
+            
+    //smallbearingholder holes
+                translate([-(p5wingW+p5bodyW+p5wingW)/2,0,0]){
+        translate([p5wingW+p5bodyW,0,0]){            
+        //wing right holes
+            translate([p5wingW/2,p5mounthole2back,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                translate([p5wingW/2,p5wingL-p5mounthole2front,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+        } //end wing right translate  
+        
+        //wing left holes
+            translate([p5wingW/2,p5mounthole2back,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                translate([p5wingW/2,p5wingL-p5mounthole2front,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+    }//end translate - center X of holes
+        }//end translate to ring
+    }//end for rotate
+}//end small bearing holder for    
+}else
+{
+for(i=[1:c2bmounts]){
+    rotate([0,0,((360/c2bmounts)*i)]){
+        translate([0,((p3baseOD/2)+1),0]){ 
+            
+    //smallbearingholder holes
+                translate([-(p5wingW+p5bodyW+p5wingW)/2,0,0]){
+        translate([p5wingW+p5bodyW,0,0]){            
+        //wing right holes
+            translate([p5wingW/2,p5mounthole2back,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                translate([p5wingW/2,p5wingL-p5mounthole2front,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+        } //end wing right translate  
+        
+        //wing left holes
+            translate([p5wingW/2,p5mounthole2back,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                translate([p5wingW/2,p5wingL-p5mounthole2front,0])
+                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+    }//end translate - center X of holes
+        }//end translate to ring
+    }//end for rotate
+}//end small bearing holder for
+} //end if-else
+
+//end bearing holders
        
         
     }  //end main difference
