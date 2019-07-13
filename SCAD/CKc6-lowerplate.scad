@@ -59,6 +59,7 @@ translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]
         } //end for
     }else
     {
+        /*
                 for(i=[1:numberMountain]){
             rotate([0,0,((360/numberMountain)*i)+((360/numberMountain)*2/3)]){
           
@@ -77,6 +78,7 @@ translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]
  
             } //end rotate i
         } //end for
+*/
     }//end else
 /*
 //small bearing holder holes to optionally connect through

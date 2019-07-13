@@ -8,6 +8,7 @@ use <CKp3--outer.scad>;
 use <CKp4--yardHolder.scad>;
 use <CKp5--smallbearingholder.scad>;
 use <CKp8--plateconnector.scad>;
+use <CKp8b--plateconnector-p5.scad>;
 use <CKp8d--plateconnector-bottomStand.scad>;
 use <CKp9--outerconnector.scad>;
 use <CKpM1--mountain.scad>;
@@ -121,16 +122,28 @@ CKc5();
 
 
 //p8
+for(i=[1:c2bmounts/2]){
+    rotate([0,0,((360/c2bmounts/2)*i)]){
+      translate([(((p5wingW/2)+p5bodyW+(p5wingW/2))/2),(p3baseOD/2)+1+p5mounthole2back,pPspace1+pPplate1]){ 
+                CKp8b();
+        }//end translate
+      translate([-(((p5wingW/2)+p5bodyW+(p5wingW/2))/2),(p3baseOD/2)+1+p5mounthole2back,pPspace1+pPplate1]){ 
+                CKp8b();
+        }//end translate
+    }//end rotate
+}//end for    
+    
+/*    
 translate([0,0,pPspace1+pPplate1])
         for(i=[1:c2connectors-1]){
             rotate([0,0,((360/c2connectors)*i)]){
                 translate([0,(pMID/2)+(pMgroove)+1+(p8baseL/2),0]){          
                         translate([0,-p8baseL/2,-0.1])
-                        CKp8();
+                        CKp8b();
                 }//end translate
             }//end rotate
         }//end for
-
+*/
 
 /*
 translate([0,0,-nB+(pPspace1+pPplate1+pMgrooveC3-nC-(pMgrooveD-nC))])
