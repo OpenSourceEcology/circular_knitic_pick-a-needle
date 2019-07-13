@@ -648,8 +648,8 @@ c2bmounts*1.3,
 echo("p7number", p7number);
 
 //number of plate connectors
-c2connectors=pMnum*3; // need to tweak so does not overlap mountain footprint
-
+//c2connectors=pMnum*3; // need to tweak so does not overlap mountain footprint
+c2connectors=numberMountain;
 
     /////gear calcs/////
 

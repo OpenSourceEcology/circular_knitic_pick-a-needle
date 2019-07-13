@@ -59,8 +59,16 @@ translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]
         } //end for
     }else
     {
-                for(i=[1:c2connectors]){
-            rotate([0,0,((360/c2connectors)*i)]){
+                for(i=[1:numberMountain]){
+            rotate([0,0,((360/numberMountain)*i)+((360/numberMountain)*2/3)]){
+          
+                        translate([0,p8innerboltO2C,-0.1])
+                            cylinder(d=p8holeD,h=c3H+0.2,$fn=36);
+                        translate([0,p8outerboltO2C,-0.1])
+                            cylinder(d=p8holeD,h=c3H+0.2,$fn=36);
+ 
+            } //end rotate i
+            rotate([0,0,((360/numberMountain)*i)-((360/numberMountain)*2/3)]){
           
                         translate([0,p8innerboltO2C,-0.1])
                             cylinder(d=p8holeD,h=c3H+0.2,$fn=36);
@@ -171,6 +179,50 @@ for(i=[1:c2bmounts]){
 
 //end bearing holders
        
+
+        //mountain cutout
+for(i=[1:numberMountain]){
+    rotate([0,0,i*(360/numberMountain)]){
+
+        //////
+//mountain bolt holes
+        rotate([0,0,0]){
+            //1
+translate([0,(cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)),0])
+translate([(pMbodyXr+(pMshelfX/2)),0,0])
+  cylinder(d=pMshelfBoltD, h=pMH, $fn=36);
+            //2
+translate([0,(c2ID/2)+pMgroove+pMwallT-(pMshelfBoltD*1.5),0])
+translate([(pMbodyXr+(pMshelfX/2)),0,0])
+  cylinder(d=pMshelfBoltD, h=pMH, $fn=36);  
+                        
+        mirror([1,0,0]){
+            //1
+translate([0,(cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)),0])
+translate([(pMbodyXr+(pMshelfX/2)),0,0])
+  cylinder(d=pMshelfBoltD, h=pMH, $fn=36);
+            //2
+translate([0,(c2ID/2)+pMgroove+pMwallT-(pMshelfBoltD*1.5),0])
+translate([(pMbodyXr+(pMshelfX/2)),0,0])
+  cylinder(d=pMshelfBoltD, h=pMH, $fn=36);        
+        } //end mirror
+    } //end rotate
+//end of bolt holes
+//////////////
+    
+        //makerbeam holes
+        
+    if(TF==2){
+translate([(TFW/2)-(10/2),((c2ID+(pMgroove*2)+(pMwallT*2))/2)+(10/2),0])
+
+        cylinder(d=3, h=pMH, $fn=36);
+
+mirror([1,0,0])
+    translate([(TFW/2)-(10/2),((c2ID+(pMgroove*2)+(pMwallT*2))/2)+(10/2),0])
+        cylinder(d=3, h=pMH, $fn=36);
+    }
+}//end mountina for rotate    
+}//end mountain for
         
     }  //end main difference
 
