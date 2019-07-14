@@ -52,9 +52,10 @@ UPthreadD=2.5;
 UPc1steppersnumber=UPnumberMountain;  
 
 //laser cut part thickness
-UPupper_surfaceH=3.4;  //thickness of upper rotating plate  ///5  //6.35= 1/4"inch
-UPbottom_surface_motor_gearsH=3.4;  //thickness of geared rotating plate
+UPupper_surfaceH=5;  //thickness of upper rotating plate  ///5  //6.35= 1/4"inch
+UPbottom_surface_motor_gearsH=5;  //thickness of geared rotating plate
 UPtable_surface=10;        //thickness of plate of main table
+
 UPtable_support=12.7;       //thickness of support board below table surface
 
 //width of wood used to support table around the edges

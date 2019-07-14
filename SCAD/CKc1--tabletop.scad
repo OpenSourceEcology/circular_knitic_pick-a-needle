@@ -75,16 +75,16 @@ for(i=[1:4]){
         translate([p5wingW+p5bodyW,0,0]){            
         //wing right holes
             translate([p5wingW/2,p5mounthole2back,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
                 translate([p5wingW/2,p5wingL-p5mounthole2front,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
         } //end wing right translate  
         
         //wing left holes
             translate([p5wingW/2,p5mounthole2back,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
                 translate([p5wingW/2,p5wingL-p5mounthole2front,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
     }//end translate - center X of holes
         }//end translate to ring
     }//end for rotate
@@ -100,16 +100,16 @@ for(i=[1:c2bmounts]){
         translate([p5wingW+p5bodyW,0,0]){            
         //wing right holes
             translate([p5wingW/2,p5mounthole2back,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
                 translate([p5wingW/2,p5wingL-p5mounthole2front,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
         } //end wing right translate  
         
         //wing left holes
             translate([p5wingW/2,p5mounthole2back,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
                 translate([p5wingW/2,p5wingL-p5mounthole2front,0])
-                cylinder(d=p5mountholeOD,h=c2H+0.1,$fn=36);
+                cylinder(d=p5mountholeOD,h=c1H+0.1,$fn=36);
     }//end translate - center X of holes
         }//end translate to ring
     }//end for rotate
