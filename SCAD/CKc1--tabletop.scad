@@ -61,17 +61,17 @@ translate([0,0,0]){
 //leg mounting holes
 for(i=[1:c1Sides]){
 rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
-translate([(c1polyOD/2)-(woodbeamW/2),((tan(360/(c1Sides*2))*(c1polyOD/2))/2)-(woodbeamScrewOD*2),0]) 
+translate([(c1polyOD/2)-(woodbeamW/2),((tan(360/(c1Sides*2))*(c1polyOD/2))/2),0]) 
 #cylinder(d=woodbeamScrewOD,h=c1H);
 rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
-translate([(c1polyOD/2)-(woodbeamW/2),((tan(360/(c1Sides*2))*(c1polyOD/2))/2)+(woodbeamScrewOD*2),0]) 
+translate([(c1polyOD/2)-(woodbeamW/2)-(woodbeamScrewOD*4),((tan(360/(c1Sides*2))*(c1polyOD/2))/2),0]) 
 #cylinder(d=woodbeamScrewOD,h=c1H);    
 
 rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
-translate([(c1polyOD/2)-(woodbeamW/2),-((tan(360/(c1Sides*2))*(c1polyOD/2))/2)-(woodbeamScrewOD*2),0]) 
+translate([(c1polyOD/2)-(woodbeamW/2),-((tan(360/(c1Sides*2))*(c1polyOD/2))/2),0]) 
 #cylinder(d=woodbeamScrewOD,h=c1H);
 rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
-translate([(c1polyOD/2)-(woodbeamW/2),-((tan(360/(c1Sides*2))*(c1polyOD/2))/2)+(woodbeamScrewOD*2),0]) 
+translate([(c1polyOD/2)-(woodbeamW/2)-(woodbeamScrewOD*4),-((tan(360/(c1Sides*2))*(c1polyOD/2))/2),0]) 
 #cylinder(d=woodbeamScrewOD,h=c1H);    
 }
 
