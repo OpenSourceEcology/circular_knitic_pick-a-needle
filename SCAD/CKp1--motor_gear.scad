@@ -14,10 +14,10 @@ use <CKc2--bottom_surface_motor_gears.scad>;
 
 pi=3.1415926535897932384626433832795;
 
-//mirror([0,0,1])
-//CKp1();
+mirror([0,0,1])
+CKp1();
 
-///*
+/*
 translate([0,0,-pPplate1-pPspace1])
 CKp1();
 translate([0,(CKp1_pitch_radius+CKc2_pitch_radius),0]){
@@ -27,7 +27,7 @@ CKc2();
 translate([0,0,-c2H-pPspace1-c1H])
 CKc1();
 } //end tanslate
-//*/
+*/
 
 module CKp1(){
     

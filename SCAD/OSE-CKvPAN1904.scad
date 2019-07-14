@@ -91,13 +91,13 @@ for(i=[1:p2number]){
 }
 
 
-
 //p3 - outer wall
 for(i=[1:p3number]){
     rotate([0,0,i*(360/p3number)])
     translate([-p3baseOD/2,0,0])
     CKp3();
 }
+
 
 //p9 - connector for p3
 for(i=[1:p3number]){
@@ -106,7 +106,6 @@ for(i=[1:p3number]){
     rotate([0,0,180])
     CKp9();
 }//end for
-
 
 
 //p4 - yard holder at top
@@ -121,11 +120,11 @@ for(i=[1:p4number]){
 
 //pS1 - pick a needle
 rotate([0,0,-45])
-translate([pMID/2,0,0])
+translate([pMID/2,0,pPspace1])
 CKpS1();
 
 mirror([1,0,0])
-translate([pMID/2,0,0])
+translate([pMID/2,0,pPspace1])
 CKpS1();
 
 
@@ -151,7 +150,7 @@ translate([0,c6OD/2,pPspace1])
 CKc6();
 
 //c3 - mountain insert
-translate([0,c3OD/2,pPspace1+pPspace2])
+translate([0,c3OD/2,pPspace1+c6H+pPspace2])
 CKc3();
 
 //c5 - pick-a-needle off plate
@@ -204,15 +203,16 @@ CKp5(1); //small bearing holder
 
 
 //p8
-translate([0,0,pPspace1+pPplate1])
-        for(i=[1:c2connectors-1]){
-            rotate([0,0,((360/c2connectors)*i)]){
-                translate([0,(pMID/2)+(pMgroove)+1+(p8baseL/2),0]){          
-                        translate([0,-p8baseL/2,-0.1])
-                        CKp8();
-                }//end translate
-            }//end rotate
-        }//end for
+for(i=[1:c2bmounts/2]){
+    rotate([0,0,((360/c2bmounts*2)*i)+((360/c2bmounts*2)/2)]){
+      translate([(((p5wingW/2)+p5bodyW+(p5wingW/2))/2),(p3baseOD/2)+1+p5mounthole2back,pPspace1+pPplate1]){ 
+                CKp8b();
+        }//end translate
+      translate([-(((p5wingW/2)+p5bodyW+(p5wingW/2))/2),(p3baseOD/2)+1+p5mounthole2back,pPspace1+pPplate1]){ 
+                CKp8b();
+        }//end translate
+    }//end rotate
+}//end for    
 
 
 //mountain
