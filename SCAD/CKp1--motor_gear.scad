@@ -1,5 +1,7 @@
 include <CKvars.scad>;
 use <CKc3--topplate.scad>
+use <CKc1--tabletop.scad>;
+use <CKc2--bottom_surface_motor_gears.scad>;
 
 //////
 //=BOM=
@@ -12,8 +14,20 @@ use <CKc3--topplate.scad>
 
 pi=3.1415926535897932384626433832795;
 
-mirror([0,0,1])
+//mirror([0,0,1])
+//CKp1();
+
+///*
+translate([0,0,-pPplate1-pPspace1])
 CKp1();
+translate([0,(CKp1_pitch_radius+CKc2_pitch_radius),0]){
+//c2 - geared plate
+translate([0,c2OD/2,-c2H])
+CKc2();
+translate([0,0,-c2H-pPspace1-c1H])
+CKc1();
+} //end tanslate
+//*/
 
 module CKp1(){
     
@@ -30,7 +44,7 @@ cylinder(h=p1H+2,d=NEMAshaftOD);  // donut hole
 
 difference(){
     cylinder(d=c3OD,h=pPspace1-1);
-    cylinder(d=NEMAfaceCricOD+2,h=pPspace1-1);
+    cylinder(d=NEMAfaceCricOD-1,h=pPspace1-1);
 }
 
 

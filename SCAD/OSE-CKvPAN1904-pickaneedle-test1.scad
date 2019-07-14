@@ -123,7 +123,7 @@ CKc5();
 
 //p8
 for(i=[1:c2bmounts/2]){
-    rotate([0,0,((360/c2bmounts/2)*i)]){
+    rotate([0,0,((360/c2bmounts*2)*i)+((360/c2bmounts*2)/2)]){
       translate([(((p5wingW/2)+p5bodyW+(p5wingW/2))/2),(p3baseOD/2)+1+p5mounthole2back,pPspace1+pPplate1]){ 
                 CKp8b();
         }//end translate
