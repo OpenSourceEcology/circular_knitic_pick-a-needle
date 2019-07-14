@@ -60,7 +60,7 @@ UPtable_support=12.7;       //thickness of support board below table surface
 
 //width of wood used to support table around the edges
 UPwoodbeamW=25.4;           //table leg wood beam width  1.0 inch
-UPwoodbeamScrewOD=6.32;     // 1/4" screw hole into wood beam
+UPwoodbeamScrewOD=6;     // M6 screw hole into wood beam
 
 //thread feeder option
 UPTF=1;    //  0=none  1=angle iron  2=makerbeam10mm

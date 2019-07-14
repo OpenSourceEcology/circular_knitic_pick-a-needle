@@ -55,13 +55,15 @@ translate([0,0,0]){
 //          }
     
       } //end diff      
-          
-            
-            
-        
+               
         cylinder(h=c1H+2,d=p3baseID);  // donut hole
- 
 
+//leg mounting holes
+for(i=[1:c1Sides]){
+rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
+translate([(c1polyOD/2)-(woodbeamW/2),0,0]) 
+#cylinder(d=woodbeamScrewOD,h=c1H);
+}
 
     //small bearing holder
 if(atan((((((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))+(pMshelfX/2)))/((cos(pMd1e-pMd0)*((pMID/2)+(pMshelfBoltD)+pMgroove)))) > 45){
