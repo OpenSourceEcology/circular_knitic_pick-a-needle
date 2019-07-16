@@ -12,6 +12,9 @@ use <CKc2--bottom_surface_motor_gears.scad>;
     rez=p2number*p2needles*2;  //calculate desired rezolution
     $fn=rez; //defines resolution of circles.
 
+p1ChmfR=4;
+
+
 pi=3.1415926535897932384626433832795;
 
 mirror([0,0,1])
@@ -40,11 +43,17 @@ gear (circular_pitch=pCir,
 	hub_thickness = p1H,
 	circles=0);
    
-cylinder(h=p1H+2,d=NEMAshaftOD);  // donut hole
+cylinder(h=p1H+2,d=NEMAshaftOD);  // shaft hole
 
 difference(){
     cylinder(d=c3OD,h=pPspace1-1);
     cylinder(d=NEMAfaceCricOD-1,h=pPspace1-1);
+translate([0,0,pPspace1-1-p1ChmfR])
+cylinder(d1=NEMAfaceCricOD-1,d2=NEMAfaceCricOD-1+(p1ChmfR*2),h=p1ChmfR);
+
+
+
+
 }
 
 
