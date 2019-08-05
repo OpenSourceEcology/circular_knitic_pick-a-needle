@@ -379,7 +379,11 @@ rotate([0,0,45])
 
 
 //translate([sin(pMd4s)*(pMID/2),(pMID/2),pPspace2+pPplate2+(aaX)])
-translate([(((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1,(c2ID+(pMgroove*2)+(pMwallT*2))/2,(pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD])
+translate([
+    (((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1
+    ,(c2ID+(pMgroove*2)+(pMwallT*2))/2
+    ,(pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD
+    ])
 rotate([90,0,0])
 cylinder(d=aaboltD,h=(c2ID+(pMgroove*2)+(pMwallT*2))/2,$fn=36);
 
@@ -431,7 +435,17 @@ translate([
 rotate([90,0,0])
 cylinder(d=aaboltHD+0.5,h=(c2ID+(pMgroove*2)+(pMwallT*2))/2,$fn=36);
 */
-    
+
+
+//hole 3
+translate([
+    (((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1
+    ,(c2ID+(pMgroove*2)+(pMwallT*2))/2
+    ,(((pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD)+(pMH-(aaboltHD/2)-5))/2
+    ])
+rotate([90,0,90])
+cylinder(d=aaboltD,h=aaX+(aaboltHH*2),$fn=36);
+
     
 } //end if
     
