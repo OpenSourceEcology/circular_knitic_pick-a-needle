@@ -5,6 +5,7 @@ CKpM3();
 
 
 module CKpM3(){    
+translate([0,0,-pM3H/2]){
 mirror([0,1,0])
 mirror([1,0,0])
 difference(){
@@ -34,6 +35,7 @@ translate([-aaT,-aaT,0])
    #cylinder(d=aaboltD,h=aaX,$fn=36);
     
 } //end diff
+} //end Z trans
 } //end module
 
 

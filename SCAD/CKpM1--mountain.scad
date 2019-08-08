@@ -107,7 +107,8 @@ mirror(1,0,0)
         cube([aaX,aaX,pMgrooveC3+nA-nC-nB+aaX]);  //cube 
         cube([aaX-aaT,aaX-aaT,pMgrooveC3+nA-nC-nB+aaX]);
     } //end angle iron    
-    
+
+/*    
 translate([
     0,
     p3wallOD/2,
@@ -116,9 +117,16 @@ translate([
 mirror([0,0,1])
 translate([0,0,tipOpenX/2])
 CKpM2();
-    
+*/    
 
-translate([pMbodyXr-pMshelfchamfR,((c2ID+(pMgroove*2)+(pMwallT*2))/2),pPspace2+pPplate2+pMshelfchamfR])    
+translate([
+    pMbodyXr-pMshelfchamfR
+    ,((c2ID+(pMgroove*2)+(pMwallT*2))/2)
+    ,(((pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD)+(pMH-(aaboltHD/2)-5))/2
+    ])
+
+
+    
 CKpM3();    
 
 mirror([1,0,0])
@@ -442,8 +450,8 @@ cylinder(d=aaboltHD+0.5,h=(c2ID+(pMgroove*2)+(pMwallT*2))/2,$fn=36);
 
 //hole 3
 translate([
-    (((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1
-    ,-(aaX-aaT)-(aaboltD/2)+(c2ID+(pMgroove*2)+(pMwallT*2))/2
+    (((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1    
+    ,-(aaX-aaT)-(aaboltD/2)-1+(c2ID+(pMgroove*2)+(pMwallT*2))/2
     ,(((pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD)+(pMH-(aaboltHD/2)-5))/2
     ])
 rotate([90,0,90])
