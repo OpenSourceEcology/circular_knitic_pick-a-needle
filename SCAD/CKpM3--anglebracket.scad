@@ -32,7 +32,7 @@ translate([-aaT,-aaT,0])
 
      translate([0,-(-(aaX-aaT)-(aaboltD/2)-1),pM3c2e+(pM3c2c/2)])  
  rotate([90,0,270])
-   #cylinder(d=aaboltD,h=aaX,$fn=36);
+   cylinder(d=aaboltD,h=aaX,$fn=36);
     
 } //end diff
 } //end Z trans
