@@ -459,12 +459,12 @@ cylinder(d=aaboltD,h=aaX+(aaboltHH*2),$fn=36);
 
 translate([
     (((c2ID+(pMgroove*2))/2)*cos(90-(pMd1e-pMd0)))-pMshelfchamfR-(aaX-aaT)-(aaboltD/2)-1+((pMsqNutW+pMsqNutSlop)/2)
-    ,((c2ID+(pMgroove*2)+(pMwallT*2))/2)-((((pMID/2)-(cos(pMd4s)*(pMID/2)))+pMwallT+pMgroove)-(sin(pMd4s)*(aaboltHD))-2-aaboltHH)
+    ,((c2ID+(pMgroove*2)+(pMwallT*2))/2)-(((aaX-aaT)+(aaboltD/2)+1)+((pMsqNutW+pMsqNutSlop)/2))
     ,((((pPspace2+pPplate2+1)+(aaboltHD/2)+bearingholderZBOD)+(pMH-(aaboltHD/2)-5))/2)-((pMsqNutW+pMsqNutSlop)/2)
     ])
 cube([
     pMsqNutH+pMsqNutSlop
-    ,((aaX-aaT)+(aaboltD/2)+1)+((pMsqNutW+pMsqNutSlop)/2)
+    ,(((aaX-aaT)+(aaboltD/2)+1)+((pMsqNutW+pMsqNutSlop)/2))
     ,pMsqNutW+pMsqNutSlop
     ]);
     
