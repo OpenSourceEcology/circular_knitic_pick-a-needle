@@ -2,26 +2,11 @@ include <CKvars.scad>;
 use <CKc2--bottom_surface_motor_gears.scad>;
 use <CKp1--motor_gear.scad>;
 
-////TODO
-//move Z mounts to corners
-//place a Z next to stepper, or on either side
-//need to reduce to 380 OD width side to side
-//need to reduce wasted space around the edges
-
-c1Sides=6;
-
-c1polyOD=c6OD;  //need to calculate stepper OD later
-
 projection(cut = false)
 translate([c1polyOD/2,0,0])
 CKc1();
 
-
-//need to make first Z mount less than 45 if there is room
-//make sure to update full assembly
-
 //((p3baseOD/2)+1+((p5wingL)-(p5bearingfromwall+(p5wiggleL/2)+p5boltHeadH)))*2; //length to outside of outter bearing
-
 
 module CKc1(){
     
@@ -45,7 +30,7 @@ translate([0,0,0]){
           for(i=[1:c1Sides]){
               rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
               translate([c1polyOD/2,-c1polyOD/2,0])
-              #cube([c1polyOD,c1polyOD,c1H]);
+              cube([c1polyOD,c1polyOD,c1H]);
           }
           
 //                    for(i=[1]){
