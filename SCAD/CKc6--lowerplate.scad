@@ -34,9 +34,20 @@ module CKc6(){
 translate([0,-c6OD/2,0]){     //[c3OD/2,0,0]       
     difference(){  
         
-        union(){
-            cylinder(h=c3H,d=c6OD);
-        } //end main union
+//        union(){
+//            cylinder(h=c3H,d=c6OD);
+//        } //end main union
+
+//hexagon
+    difference(){
+      translate([0,0,c3H/2])
+      cube([c1polyOD*1.5,c1polyOD*1.5,c3H],center=true);  //use C1OD stepper side, use new number for Z side
+      for(i=[1:c1Sides]){
+        rotate([0,0,((360/c1Sides)*i)+(360/c1Sides)])
+        translate([c1polyOD/2,-c1polyOD/2,0])
+        cube([c1polyOD,c1polyOD,c3H]);
+      }       
+    } //end diff 
         
         cylinder(h=c3H+2,d=c3ID);  // donut hole
  

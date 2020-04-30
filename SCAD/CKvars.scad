@@ -50,6 +50,9 @@ c1zmounts=max(p3number,4);           //p3number  //4
 
 c1steppersnumber=UPc1steppersnumber;  //number of stepper motors driving the gear
 
+c1Sides=max(6,c1steppersnumber);  //number of sides of plate
+
+
 Td=5; //tooth depth-ish? - used to calculate # teeth large gear and pitch
 
 ////MATERIALS////
@@ -744,6 +747,8 @@ c6OD=c3OD+(p8dminT*2);
 p8dOD=c6OD;
 
 UPc1W=c6OD;
+
+c1polyOD=c6OD;  //need to calculate stepper OD later
 
 
 //p2 flat socket head screw
