@@ -50,6 +50,7 @@ void setup() {
   digitalWrite(MS1, HIGH); //Pull MS1,MS2, and MS3 high to set logic to 1/16th microstep resolution
   digitalWrite(MS2, HIGH);
   digitalWrite(MS3, HIGH);
+  digitalWrite(EN, LOW);
   
   }
 
