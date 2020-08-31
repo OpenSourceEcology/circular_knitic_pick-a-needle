@@ -18,7 +18,7 @@ Example based off of demos by Brian Schmalz (designer of the Big Easy Driver).
 http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html
 ******************************************************************************/
 //Declare pin functions on Arduino
-#define stp 2
+#define stp 13
 #define dir 3
 #define MS1 4
 #define MS2 5
@@ -30,6 +30,7 @@ char user_input;
 int x;
 int y;
 int state;
+int stpdly = 5;
 
 void setup() {
   pinMode(stp, OUTPUT);
@@ -46,10 +47,10 @@ void setup() {
   digitalWrite(MS3, LOW);
   digitalWrite(EN, HIGH);
 
-  digitalWrite(dir, LOW); //Pull direction pin low to move "forward"
+  digitalWrite(dir, HIGH); //Pull direction pin low to move "forward"
   digitalWrite(MS1, HIGH); //Pull MS1,MS2, and MS3 high to set logic to 1/16th microstep resolution
   digitalWrite(MS2, HIGH);
-  digitalWrite(MS3, HIGH);
+  digitalWrite(MS3, LOW);
   digitalWrite(EN, LOW);
   
   }
@@ -57,7 +58,7 @@ void setup() {
 //Main loop
 void loop() {
     digitalWrite(stp,HIGH); //Trigger one step forward
-    delay(1);
+    delay(stpdly);
     digitalWrite(stp,LOW); //Pull step pin low so it can be triggered again
-    delay(1);
+    delay(stpdly);
 }
