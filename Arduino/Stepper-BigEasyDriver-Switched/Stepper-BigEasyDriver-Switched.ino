@@ -43,6 +43,9 @@ void setup() {
   pinMode(MS2, OUTPUT);
   pinMode(MS3, OUTPUT);
   pinMode(EN, OUTPUT);
+
+ pinMode( FWD_PIN, INPUT_PULLUP );
+ pinMode( BAK_PIN, INPUT_PULLUP );
   
   digitalWrite(stp, LOW);
   digitalWrite(dir, LOW);
